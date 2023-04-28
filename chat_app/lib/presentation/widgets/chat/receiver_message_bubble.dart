@@ -1,7 +1,11 @@
+import 'package:chat_app/domain/entities/message.dart';
 import 'package:flutter/material.dart';
 
 class ReceiverMessageBubble extends StatelessWidget {
-  const ReceiverMessageBubble({Key? key}) : super(key: key);
+  final Message message;
+
+  const ReceiverMessageBubble({required this.message, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +16,14 @@ class ReceiverMessageBubble extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               color: colors.secondary, borderRadius: BorderRadius.circular(20)),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text('Hola mundo', style: TextStyle(color: Colors.white)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child:
+                Text(message.text, style: const TextStyle(color: Colors.white)),
           ),
         ),
         const SizedBox(height: 5),
-        _ImageBubble(),
+        _ImageBubble(urlImage: message.imageUrl!),
         const SizedBox(height: 10),
       ],
     );
@@ -26,6 +31,10 @@ class ReceiverMessageBubble extends StatelessWidget {
 }
 
 class _ImageBubble extends StatelessWidget {
+  final String urlImage;
+
+  const _ImageBubble({required this.urlImage, Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // Dimensiones del dispositivo
@@ -33,8 +42,7 @@ class _ImageBubble extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: Image.network(
-          'https://yesno.wtf/assets/yes/2-5df1b403f2654fa77559af1bf2332d7a.gif',
+      child: Image.network(urlImage,
           width: size.width * 0.7,
           height: 150,
           fit: BoxFit.cover, loadingBuilder: (BuildContext context,

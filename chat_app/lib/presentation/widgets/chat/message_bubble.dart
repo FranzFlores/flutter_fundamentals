@@ -1,7 +1,9 @@
+import 'package:chat_app/domain/entities/message.dart';
 import 'package:flutter/material.dart';
 
 class MessageBubble extends StatelessWidget {
-  const MessageBubble({Key? key}) : super(key: key);
+  final Message message;
+  const MessageBubble({Key? key, required this.message}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +14,10 @@ class MessageBubble extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               color: colors.primary, borderRadius: BorderRadius.circular(20)),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child:
-                Text('Labaabdir edwdsd', style: TextStyle(color: Colors.white)),
+                Text(message.text, style: const TextStyle(color: Colors.white)),
           ),
         ),
         const SizedBox(height: 10)
