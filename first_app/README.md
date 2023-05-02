@@ -1,16 +1,13 @@
-# first_app
+# Primera aplicación 
+Aplicación que permite incrementar o decrementar un valor mediante botones, no se aceptan valores negativos. 
+Permite entender los conceptos básicos de flutter entre los que se destaca: 
 
-A new Flutter project.
+* Uso de widget MaterialApp
+* Uso de widget Scaffold
+* Uso de Stateful Widget
 
-## Getting Started
+## Contenido del proyexto
+**counter_function_screen.dart** : Archovo que contiene una clase que hereda de StatefulWidget que donde se encuentra el código para realizar el incremento o decremento del valor mediante botones.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Resultado final de la aplicación
+<img src="https://user-images.githubusercontent.com/22090119/235801803-26742618-5bca-4da2-bb55-b0299340eef3.png" alt="image" width="200" height="400">
