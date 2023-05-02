@@ -26,20 +26,19 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
           ]),
       body: Center(
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('$counter',
-              style:
-                  const TextStyle(fontSize: 160, fontWeight: FontWeight.w100)),
-          Text(
-            'Click${counter == 1 ? "" : "s"}',
-            style: const TextStyle(fontSize: 25),
-          )
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('$counter', style: const TextStyle(fontSize: 160, fontWeight: FontWeight.w100)),
+              Text(
+                'Click${counter == 1 ? "" : "s"}',
+                style: const TextStyle(fontSize: 25),
+              )
         ],
       )),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+
           CustomButton(
             icon: Icons.refresh_outlined,
             onPressed: () {
@@ -49,6 +48,7 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
             },
           ),
           const SizedBox(height: 10),
+
           CustomButton(
               icon: Icons.exposure_minus_1_outlined,
               onPressed: () {
@@ -58,6 +58,7 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
                 });
               }),
           const SizedBox(height: 10),
+          
           CustomButton(
             icon: Icons.plus_one_outlined,
             onPressed: () {
