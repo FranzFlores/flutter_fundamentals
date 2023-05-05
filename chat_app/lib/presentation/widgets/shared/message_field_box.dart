@@ -12,7 +12,8 @@ class MessageFielddBox extends StatelessWidget {
 
     final outlineInputBorder = UnderlineInputBorder(
         borderSide: const BorderSide(color: Colors.transparent),
-        borderRadius: BorderRadius.circular(40));
+        borderRadius: BorderRadius.circular(40)
+    );
 
     return TextFormField(
       focusNode: focusNode,

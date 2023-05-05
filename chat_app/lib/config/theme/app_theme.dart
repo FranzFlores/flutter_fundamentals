@@ -11,6 +11,7 @@ const List<Color> _colorThemes = [
   Colors.pink
 ];
 
+// Clase que define el tema (colores, estilos, etc) de la aplicación  
 class AppTheme {
   final int selectedColor;
 

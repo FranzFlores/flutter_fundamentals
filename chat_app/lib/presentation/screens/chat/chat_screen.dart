@@ -18,7 +18,9 @@ class ChatScreen extends StatelessWidget {
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
               backgroundImage: NetworkImage(
-                  'https://styles.redditmedia.com/t5_2sa78/styles/communityIcon_209adg6qsl371.jpg?width=256&s=574e4424ca6ee042d4913f24cea7562b289bf3ec')),
+                  'https://styles.redditmedia.com/t5_2sa78/styles/communityIcon_209adg6qsl371.jpg?width=256&s=574e4424ca6ee042d4913f24cea7562b289bf3ec'
+                )
+              ),
         ),
         title: const Text('Anne Hathaway'),
       ),
@@ -34,19 +36,21 @@ class _ChatView extends StatelessWidget {
 
     return SafeArea(
       child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           child: Column(children: [
             Expanded(
                 child: ListView.builder(
                     controller: chatProvider.chatScrollController,
                     itemCount: chatProvider.messageList.length,
                     itemBuilder: (context, index) {
+                      
                       final message = chatProvider.messageList[index];
 
                       return (message.person == Person.transmitter)
                           ? MessageBubble(message: message)
                           : ReceiverMessageBubble(message: message);
-                    })),
+                })
+              ),
 
             //Cajar de texto
             MessageFielddBox(

@@ -14,12 +14,10 @@ class ReceiverMessageBubble extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          decoration: BoxDecoration(
-              color: colors.secondary, borderRadius: BorderRadius.circular(20)),
+          decoration: BoxDecoration(color: colors.secondary, borderRadius: BorderRadius.circular(20)),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child:
-                Text(message.text, style: const TextStyle(color: Colors.white)),
+            child: Text(message.text, style: const TextStyle(color: Colors.white))
           ),
         ),
         const SizedBox(height: 5),
