@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/config/menu/menu_items.dart';
+import 'package:widgets/presentation/screens/buttons/buttons_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -35,7 +36,16 @@ class _HomeView extends StatelessWidget {
           leading: Icon(items[index].icon, color: colors.primary),//Icono antes del widget
           trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary), //Icono del final
           onTap: () {
-            // navegar a otra pantalla
+            // Navegación de rutas
+              // Navigator.of(context).push(
+              //   MaterialPageRoute(
+              //     builder: (context) => const ButtonsScreen()
+              //   )
+              // );
+
+            // Navegación de rutas con nombres 
+            Navigator.pushNamed(context, items[index].link);
+              
           },
         );
       },
